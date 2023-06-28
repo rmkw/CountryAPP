@@ -16,15 +16,21 @@
     <div class="col-4">
       <h3>Bandera</h3>
       <img [src]="country.flags.svg" [alt]="country.name.common" class="img-thumbnail">
-<hr>
+      <hr>
       <figure class="text-center">
-        <blockquote class="blockquote">
+        <small >
           <p>{{ country.flags.alt}}</p>
-        </blockquote>
+        </small>
       </figure>
       <hr>
-<h3>Escudo de Armas</h3>
-      <img [src]="country.coatOfArms.svg" [alt]="country.name.common" class="img-thumbnail">
+      <h3>Escudo de Armas</h3>
+
+
+
+        <img [src]="country.coatOfArms.svg" [alt]="country.name.common" class="img-thumbnail">
+
+
+
 
     </div>
     <div class="col">
