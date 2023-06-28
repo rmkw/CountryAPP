@@ -1,0 +1,128 @@
+<ng-template #loading>
+  <div class="alert alert-info">
+    Espere por favor
+  </div>
+</ng-template>
+
+
+<div *ngIf="country; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>País: <strong>{{ country.name.common }}</strong></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="country.flags.svg" [alt]="country.name.common" class="img-thumbnail">
+<hr>
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>{{ country.flags.alt}}</p>
+        </blockquote>
+      </figure>
+      <hr>
+<h3>Escudo de Armas</h3>
+      <img [src]="country.coatOfArms.svg" [alt]="country.name.common" class="img-thumbnail">
+
+    </div>
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+
+        <li class="list-group-item">
+          <strong>Official name:</strong> {{ country.name.official }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Native name:</strong> {{ country.name.nativeName.spa ? country.name.nativeName.spa.official : country.name.official  }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Capital:</strong> {{ country.capital }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Region:</strong> {{ country.region }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Sub Region:</strong> {{ country.subregion }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Continents:</strong> {{ country.continents }}
+        </li>
+
+
+        <li class="list-group-item">
+          <strong>Países Vecinos:</strong> {{ country.borders }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Start Of Week:</strong> {{ country.startOfWeek }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Independent:</strong> {{ country.independent == true ? 'YES' : '' }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Población:</strong> {{ country.population | number }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Latitud, Longitud:</strong> {{ country.latlng }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Area:</strong> {{ country.area | number }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Código:</strong> {{ country.cca3 }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Maps: </strong>
+          <a [href]="country.maps.googleMaps">Google Maps</a>
+          <span> and </span>
+          <a [href]="country.maps.openStreetMaps">OpenStreet Maps</a>
+        </li>
+
+        <li class="list-group-item">
+          <strong>Fifa:</strong> {{ country.fifa }}
+        </li>
+
+        <li class="list-group-item">
+          <strong>Time Zones:</strong> {{ country.timezones }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Traducciones</h3>
+      <div class="d-flex flex-wrap">
+        <div>
+          SPA:<span class="badge bg-primary m-1">{{ country.translations['spa'].official }}</span>
+        </div>
+        <div>
+          JPN:<span class="badge bg-primary m-1">{{ country.translations['jpn'].official }}</span>
+        </div>
+        <div>
+          RUS:<span class="badge bg-primary m-1">{{ country.translations['rus'].official }}</span>
+        </div>
+        <div>
+          ZHO:<span class="badge bg-primary m-1">{{ country.translations['zho'].official }}</span>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
